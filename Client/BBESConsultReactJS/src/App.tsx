@@ -1,17 +1,34 @@
-import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 import { useMemo } from "react";
 import { createTheme } from "@mui/material/styles";
-import { createThemeSettings } from './theme/create-theme';
+import { createThemeSettings } from "./theme/create-theme";
+import { ModeProvider, useMode } from "./context/mode-context";
 
-function App() {
-
-  const mode = "dark";
+function AppContent() {
+  const { mode } = useMode();
   const theme = useMemo(() => createTheme(createThemeSettings(mode)), [mode]);
+
   return (
     <div className="app">
-
+      <BrowserRouter>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Routes>
+            <Route path = "/"></Route>
+          </Routes>
+        </ThemeProvider>
+      </BrowserRouter>
     </div>
-  )
+  );
 }
 
-export default App
+function App() {
+  return (
+    <ModeProvider>
+      <AppContent />
+    </ModeProvider>
+  );
+}
+
+export default App;

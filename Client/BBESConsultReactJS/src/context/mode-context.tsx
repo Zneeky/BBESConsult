@@ -1,16 +1,20 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import Cookies from 'js-cookie';
 
 type Mode = 'light' | 'dark';
 
-interface ThemeContextProps {
+interface Props {
+  children: ReactNode;
+}
+
+interface ModeContextProps {
   mode: Mode;
   toggleMode: () => void;
 }
 
-const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
+const ModeContext = createContext<ModeContextProps | undefined>(undefined);
 
-export const ThemeProvider: React.FC = ({ children }) => {
+export const ModeProvider: React.FC<Props> = ({ children }) => {
   const [mode, setMode] = useState<Mode>('light'); // default to light mode
 
   useEffect(() => {
@@ -26,16 +30,16 @@ export const ThemeProvider: React.FC = ({ children }) => {
   };
 
   return (
-    <ThemeContext.Provider value={{ mode, toggleMode }}>
+    <ModeContext.Provider value={{ mode, toggleMode }}>
       {children}
-    </ThemeContext.Provider>
+    </ModeContext.Provider>
   );
 };
 
-export const useTheme = () => {
-  const context = useContext(ThemeContext);
+export const useMode = () => {
+  const context = useContext(ModeContext);
   if (!context) {
-    throw new Error('useTheme must be used within a ThemeProvider');
+    throw new Error('useMode must be used within a ModeProvider');
   }
   return context;
 };
