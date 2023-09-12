@@ -25,7 +25,7 @@ const HeroSection = () => {
       <HeroBar />
       <Box sx={{ display: "flex" }}>
         <Box sx={{ display: "block" }}>
-          <Typography color="white" variant="h2" gutterBottom>
+          <Typography color="white" variant="h1" gutterBottom>
             Accounting <br /> and <br /> Legal Services
           </Typography>
           <Typography color="white" variant="h6" gutterBottom>

@@ -2,15 +2,15 @@ import { TypographyOptions } from '@mui/material/styles/createTypography';
 
 export const createTypography = (): TypographyOptions => {
     return {
-        fontFamily: '"Poppins", sans-serif',
+        fontFamily: '"Inter", sans-serif',
         h1: {
-            fontFamily: '"Inter", sans-serif',
+            fontFamily: 'Bebas Neue Regular, sans-serif',
             fontWeight: 700,
             fontSize: '3.5rem',
             lineHeight: 1.2,
         },
         h2: {
-            fontFamily: '"Inter", sans-serif',
+            fontFamily: '"Bebas Neue Regular", sans-serif',
             fontWeight: 700,
             fontSize: '3rem',
             lineHeight: 1.2,

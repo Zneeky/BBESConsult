@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Bebas Neue Regular';
+    src:
+         url('/fonts/Bebas\ Neue\ Regular.ttf') format('truetype');
+    
+    font-display: swap; /* Optional: Use for better performance */
+  }
