@@ -38,6 +38,8 @@ export const createTypography = (): TypographyOptions => {
             lineHeight: 1.57,
         },
         button: {
+            fontFamily: '"Inter", sans-serif',
+            fontSize: "0.9rem",
             fontWeight: 600,
         },
         overline: {

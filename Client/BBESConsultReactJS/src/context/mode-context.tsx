@@ -20,6 +20,7 @@ export const ModeProvider: React.FC<Props> = ({ children }) => {
   useEffect(() => {
     // On initial load, get mode from cookies or default to 'light'
     const savedMode = Cookies.get('theme-mode') as Mode || 'light';
+    console.log("Saved Mode from Cookie:", savedMode);
     setMode(savedMode);
   }, []);
 

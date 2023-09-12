@@ -10,12 +10,12 @@ import {
   SvgIcon
 } from "@mui/material";
 import { useState } from "react";
-import {ThreeBarsIcon} from "@heroicons/react/outline"
+
 
 const TopNavBar = () => {
   const [open, setOpen] = useState(false);
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -43,21 +43,38 @@ const TopNavBar = () => {
         WebkitBackdropFilter: "blur(12.7px)",
         alignItems: "center",
         justifyContent: "space-between",
-        padding: "0 2rem",
-        height: "64px",
+        padding: "20px 2rem",
+        height: {
+          xs: "55px", // sm breakpoint
+          md: "70px", // md breakpoint
+          lg: "92px", // lg breakpoint
+        },
+        position: "sticky",
+        top: "0",
+        zIndex: 1000,
       }}
       display="flex"
     >
       <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-        <img src="/path-to-logo.png" alt="Logo" width={40} />
-        <Typography variant="h6">Brand Name</Typography>
+        <img src="./images/IconBbes-removebg-preview.png" alt="Logo" width={40} />
+        <Typography 
+          variant="h2"
+          sx={{
+            fontSize: {
+              xs: "1.8rem", // Adjust font size for sm breakpoint
+              md: "2rem", // Adjust font size for md breakpoint
+              lg: "2.4rem", // Adjust font size for lg breakpoint
+            },
+          }}
+          >
+            BBES Consult
+          </Typography>
       </Box>
 
       {isMobile ? (
         <>
           <Button color="inherit" onClick={handleDrawerOpen}>
             <SvgIcon fontSize="small">
-                <ThreeBarsIcon/>
             </SvgIcon>
           </Button>
           <Drawer anchor="right" open={open} onClose={handleDrawerClose}>

@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import { createTheme } from "@mui/material/styles";
 import { createThemeSettings } from "./theme/create-theme";
 import { ModeProvider, useMode } from "./context/mode-context";
+import HomePage from "./pages/home";
 
 function AppContent() {
   const { mode } = useMode();
@@ -15,7 +16,7 @@ function AppContent() {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Routes>
-            <Route path = "/"></Route>
+            <Route path = "/" element={<HomePage/>}></Route>
           </Routes>
         </ThemeProvider>
       </BrowserRouter>
