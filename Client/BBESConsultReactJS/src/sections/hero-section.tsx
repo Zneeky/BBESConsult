@@ -1,11 +1,11 @@
 import { Box, Typography, ButtonBase, useTheme } from "@mui/material";
 //import Carousel from 'react-responsive-carousel';
 import React, { ComponentProps } from "react";
-import { Carousel, Thumbs } from "react-responsive-carousel";
+import { Carousel } from "react-responsive-carousel";
 import HeroBar from "../components/top-navbar-hero";
+import CustomCarousel from "./custom-carousel";
 
 export type CarouselProps = Partial<ComponentProps<typeof Carousel>>;
-export type ThumbsProps = Partial<ComponentProps<typeof Thumbs>>;
 
 const HeroSection = () => {
   const { palette } = useTheme();
@@ -23,37 +23,21 @@ const HeroSection = () => {
       }}
     >
       <HeroBar />
-      <Box sx={{ display: "flex" }}>
-        <Box sx={{ display: "block" }}>
-          <Typography color="white" variant="h1" gutterBottom>
-            Accounting <br /> and <br /> Legal Services
+      <Box sx={{ display: {xs:"inline-block",m:"flex"} , m:{xs:"2rem auto",md:"10rem 0px"},padding: {md:"0px 0px 0px 5rem"}, }}>
+        <Box sx={{ display: "block", width:{xs:"100%" , md:"40%"} }}>
+          <Typography color="yellow" variant="h5">Finances and Laws</Typography>
+          <Typography color="yellow" variant="h1" gutterBottom sx={{fontSize:{xs:"3.5rem", md:"4.5rem", lg:"7.5rem"}}}>
+          Accounting <br/> AND <br/> Legal Expertise
           </Typography>
-          <Typography color="white" variant="h6" gutterBottom>
+          <Box sx={{width:"35rem"}}>
+          <Typography color="#fcf09f" variant="h6" gutterBottom>
             We provide comprehensive professional financial, accounting,
             administrative, and legal solutions to both corporate and individual
             clients.
           </Typography>
+          </Box>
         </Box>
-
-        <Carousel
-          showThumbs={false}
-          showArrows={false}
-          showStatus={false}
-          showIndicators={true}
-          useKeyboardArrows
-        >
-          <Box>
-            <img src="path-to-your-image1.jpg" alt="Service 1" />
-            <Typography variant="h5">Service Title 1</Typography>
-            <Typography variant="body1">Service Description 1</Typography>
-          </Box>
-          <Box>
-            <img src="path-to-your-image2.jpg" alt="Service 2" />
-            <Typography variant="h5">Service Title 2</Typography>
-            <Typography variant="body1">Service Description 2</Typography>
-          </Box>
-          {/* Add more slides as needed */}
-        </Carousel>
+        <Box sx={{width:{xs:"100%" ,sm:"90%", md:"60%"}}}><CustomCarousel/></Box>
       </Box>
     </Box>
   );

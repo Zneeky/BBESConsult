@@ -16,6 +16,7 @@ import {
     const [open, setOpen] = useState(false);
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+    const buttonNavColor = "white";
   
     const handleDrawerOpen = () => {
       setOpen(true);
@@ -27,10 +28,10 @@ import {
   
     const navItems = (
       <Box sx={{ display: "flex", gap: 4 }}>
-        <Button color="inherit"><Typography variant="button" color="yellow">Home</Typography></Button>
-        <Button color="inherit"><Typography variant="button" color="yellow">About</Typography></Button>
-        <Button color="inherit"><Typography variant="button" color="yellow">Services</Typography></Button>
-        <Button color="inherit"><Typography variant="button" color="yellow">Contact</Typography></Button>
+        <Button color="inherit"><Typography variant="button" color={buttonNavColor}>Home</Typography></Button>
+        <Button color="inherit"><Typography variant="button" color={buttonNavColor}>About</Typography></Button>
+        <Button color="inherit"><Typography variant="button" color={buttonNavColor}>Services</Typography></Button>
+        <Button color="inherit"><Typography variant="button" color={buttonNavColor}>Contact</Typography></Button>
       </Box>
     );
   
@@ -43,7 +44,7 @@ import {
           width: "100%",
           alignItems: "center",
           justifyContent: "space-between",
-          padding: "20px 2rem",
+          padding: "20px 5rem",
           height: {
             xs: "55px", // sm breakpoint
             md: "70px", // md breakpoint
@@ -64,7 +65,7 @@ import {
                 md: "2rem", // Adjust font size for md breakpoint
                 lg: "3.0rem", // Adjust font size for lg breakpoint
               },
-              color:"yellow",
+              color:"white",
             }}
             >
               BBES Consult

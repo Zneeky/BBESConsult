@@ -4,4 +4,10 @@
          url('/fonts/Bebas\ Neue\ Regular.ttf') format('truetype');
     
     font-display: swap; /* Optional: Use for better performance */
-  }
+}
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
+
+/* .slick-slide {
+     display: inline-block;
+   } */

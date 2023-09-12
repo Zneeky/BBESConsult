@@ -6,8 +6,8 @@ export const createTypography = (): TypographyOptions => {
         h1: {
             fontFamily: 'Bebas Neue Regular, sans-serif',
             fontWeight: 700,
-            fontSize: '3.5rem',
-            lineHeight: 1.2,
+            fontSize: '7.5rem',
+            lineHeight: 1,
         },
         h2: {
             fontFamily: '"Bebas Neue Regular", sans-serif',
@@ -26,6 +26,12 @@ export const createTypography = (): TypographyOptions => {
             fontWeight: 700,
             fontSize: '1.5rem',
             lineHeight: 1.2,
+        },
+        h5:{
+            fontFamily: 'Inter',
+            fontWeight: 100,
+            fontSize: '1.1rem',
+            lineHeight: 1,
         },
         body1: {
             fontSize: '1rem',
