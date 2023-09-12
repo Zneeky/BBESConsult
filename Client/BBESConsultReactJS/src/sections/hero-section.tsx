@@ -23,7 +23,7 @@ const HeroSection = () => {
       }}
     >
       <HeroBar />
-      <Box sx={{ display: {xs:"inline-block",m:"flex"} , m:{xs:"2rem auto",md:"10rem 0px"},padding: {md:"0px 0px 0px 5rem"}, }}>
+      <Box sx={{ display: {xs:"inline-block",md:"flex"} , m:{xs:"2rem auto",md:"10rem 0px"},padding: {md:"0px 0px 0px 5rem"}, }}>
         <Box sx={{ display: "block", width:{xs:"100%" , md:"40%"} }}>
           <Typography color="yellow" variant="h5">Finances and Laws</Typography>
           <Typography color="yellow" variant="h1" gutterBottom sx={{fontSize:{xs:"3.5rem", md:"4.5rem", lg:"7.5rem"}}}>
