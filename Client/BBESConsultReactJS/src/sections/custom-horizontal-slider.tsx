@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Box, Card, Typography } from "@mui/material";
 import { Services } from "../helper-objects";
 
-const CustomCarousel = () => {
+const CustomHorizontalSlider = () => {
   const settings = {
     focusOnSelect: true,
     infinite: true,
@@ -14,7 +14,7 @@ const CustomCarousel = () => {
     class: "custom-slider",
   };
   return (
-    <Box width="92%" margin="0 auto">
+    <Box width="92%" sx={{margin:{lg:"0 auto"}}}>
       <Slider {...settings}>
         {Services.map((service) => (
           <div>
@@ -40,4 +40,4 @@ const CustomCarousel = () => {
   );
 };
 
-export default CustomCarousel;
+export default CustomHorizontalSlider;

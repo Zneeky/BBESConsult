@@ -10,8 +10,8 @@ import {
 import React, { ComponentProps } from "react";
 import { Carousel } from "react-responsive-carousel";
 import HeroBar from "../components/top-navbar-hero";
-import CustomCarousel from "./custom-carousel";
-import DummyCarousel from "./dummy";
+import CustomHorizontalSlider from "./custom-horizontal-slider";
+import CustomVerticalSlider from "./custom-vertical-slider";
 
 export type CarouselProps = Partial<ComponentProps<typeof Carousel>>;
 
@@ -24,6 +24,9 @@ const HeroSection = () => {
   return (
     <Box
       sx={{
+        margin:"0 auto",
+        maxWidth:"1920px",
+        maxHeight:"963px",
         width: "100%",
         height: "100vh", // adjust as needed
         backgroundImage: 'url("./images/BBESBuldigNightSkyBWEn.png")',
@@ -55,7 +58,8 @@ const HeroSection = () => {
             variant="h1"
             sx={{
               fontSize: {
-                xs: "3.5rem",
+                xs: "2.5rem",
+                sm: "3.5rem",
                 md: "4.5rem",
                 lg: "5.5rem",
                 xl: "7.5rem",
@@ -84,13 +88,13 @@ const HeroSection = () => {
         </Box>
         <Box
           sx={{
-            margin: "0 auto",
+            
             maxWidth: { xs: "40%", md: "100%" },
             width: { xs: "100%", lg: "60%" },
             m: { lg: "5.7rem 0px " },
           }}
         >
-          <CustomCarousel />
+            {isMobile ? (<CustomVerticalSlider/>):(<CustomHorizontalSlider />)}
         </Box>
       </Box>
     </Box>
