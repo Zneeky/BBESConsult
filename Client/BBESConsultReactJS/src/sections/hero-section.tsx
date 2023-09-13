@@ -89,7 +89,7 @@ const HeroSection = () => {
         <Box
           sx={{
             
-            maxWidth: { xs: "40%", md: "100%" },
+           
             width: { xs: "100%", lg: "60%" },
             m: { lg: "5.7rem 0px " },
           }}

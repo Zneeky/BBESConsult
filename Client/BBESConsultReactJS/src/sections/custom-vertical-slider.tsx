@@ -7,23 +7,25 @@ import { Services } from "../helper-objects";
 const CustomVerticalSlider = () => {
   const settings = {
     focusOnSelect: true,
+    centerMode: true,
     infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    vertical: true,
-    verticalSwiping: true,
+    centerPadding: "60px",
+    slidesToShow: 1,
+    speed: 500,
+    rows: 2,
+    slidesPerRow: 1,
     swipeToSlide: true,
     class: "custom-slider",
   };
   return (
-    <Box width="92%" sx={{ margin: { lg: "0 auto" } }}>
+    <Box width="92%" sx={{ margin: { xs: "0 auto" } }}>
       <Slider {...settings}>
         {Services.map((service) => (
           <div>
             <Box
               key={service.index}
               sx={{
-                height: "400px",
+                height: "200px",
                 m: "1rem",
                 boxShadow: 3,
                 borderRadius: "25px",
