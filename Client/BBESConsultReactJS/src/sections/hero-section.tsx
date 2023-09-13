@@ -1,14 +1,26 @@
-import { Box, Typography, ButtonBase, useTheme } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Button,
+  ButtonBase,
+  useTheme,
+  useMediaQuery,
+} from "@mui/material";
 //import Carousel from 'react-responsive-carousel';
 import React, { ComponentProps } from "react";
 import { Carousel } from "react-responsive-carousel";
 import HeroBar from "../components/top-navbar-hero";
 import CustomCarousel from "./custom-carousel";
+import DummyCarousel from "./dummy";
 
 export type CarouselProps = Partial<ComponentProps<typeof Carousel>>;
 
+//#fcf09f -light yellow
+//
+
 const HeroSection = () => {
-  const { palette } = useTheme();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
   return (
     <Box
       sx={{
@@ -23,21 +35,63 @@ const HeroSection = () => {
       }}
     >
       <HeroBar />
-      <Box sx={{ display: {xs:"inline-block",md:"flex"} , m:{xs:"2rem auto",md:"10rem 0px"},padding: {md:"0px 0px 0px 5rem"}, }}>
-        <Box sx={{ display: "block", width:{xs:"100%" , md:"40%"} }}>
-          <Typography color="yellow" variant="h5">Finances and Laws</Typography>
-          <Typography color="yellow" variant="h1" gutterBottom sx={{fontSize:{xs:"3.5rem", md:"4.5rem", lg:"7.5rem"}}}>
-          Accounting <br/> AND <br/> Legal Expertise
+      <Box
+        sx={{
+          display: { xs: "inline-block", lg: "flex" },
+          m: { xs: "2rem  0px", lg: "9rem 0px" },
+          padding: { xs: "0px 4rem", md: "0px 0px 0px 5rem" },
+        }}
+      >
+        <Box sx={{ display: "block", width: { xs: "100%", lg: "40%" } }}>
+          <Typography
+            color="yellow"
+            variant="h5"
+            sx={{ visibility: { xs: "hidden", lg: "visible" } }}
+          >
+            Finances and Laws
           </Typography>
-          <Box sx={{width:"35rem"}}>
-          <Typography color="#fcf09f" variant="h6" gutterBottom>
-            We provide comprehensive professional financial, accounting,
-            administrative, and legal solutions to both corporate and individual
-            clients.
+          <Typography
+            color="yellow"
+            variant="h1"
+            sx={{
+              fontSize: {
+                xs: "3.5rem",
+                md: "4.5rem",
+                lg: "5.5rem",
+                xl: "7.5rem",
+              },
+            }}
+          >
+            Accounting {!isMobile &&(<br/>)} AND {!isMobile &&(<br/>)} Legal Expertise
           </Typography>
+          {!isMobile && (
+            <Box sx={{ width: "80%" }}>
+              <Typography color="#fcf09f" variant="h6" gutterBottom>
+                We offer a holistic suite of financial, accounting,
+                administrative, and legal services tailored to meet the needs of
+                both corporate entities and individual clients.
+              </Typography>
+            </Box>
+          )}
+          <Box display="flex" gap={2} m="2rem 0">
+            <Button sx={{border:"3px solid yellow", borderRadius:"10px", backgroundColor:"tr"}}>
+              <Typography color="yellow">Contact Us</Typography>
+            </Button>
+            <Button sx={{border:"0px", borderRadius:"10px", backgroundColor:"rgba(255, 255, 255, 0.4)"}}>
+              <Typography color="white">Why Us?</Typography>
+            </Button>
           </Box>
         </Box>
-        <Box sx={{width:{xs:"100%" ,sm:"90%", md:"60%"}}}><CustomCarousel/></Box>
+        <Box
+          sx={{
+            margin: "0 auto",
+            maxWidth: { xs: "40%", md: "100%" },
+            width: { xs: "100%", lg: "60%" },
+            m: { lg: "5.7rem 0px " },
+          }}
+        >
+          <CustomCarousel />
+        </Box>
       </Box>
     </Box>
   );

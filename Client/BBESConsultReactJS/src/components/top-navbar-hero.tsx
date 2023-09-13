@@ -38,13 +38,10 @@ import {
     return (
       <Box
         sx={{
-        // background: "rgba(255, 255, 255, 0.05)",
-        // backdropFilter: "blur(4px)",
-        // WebkitBackdropFilter: "blur(12.7px)",
           width: "100%",
           alignItems: "center",
           justifyContent: "space-between",
-          padding: "20px 5rem",
+          padding: {xs:"20px 1rem", md:"20px 5rem"},
           height: {
             xs: "55px", // sm breakpoint
             md: "70px", // md breakpoint
@@ -56,7 +53,7 @@ import {
         display="flex"
       >
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-          <img src="./images/IconBbes-removebg-preview.png" alt="Logo" width={40} />
+          <Box component="img" src="./images/IconBbes-removebg-preview.png" alt="Logo" sx={{width:{xs:"40px",lg:"55px"}}} />
           <Typography 
             variant="h2"
             sx={{
