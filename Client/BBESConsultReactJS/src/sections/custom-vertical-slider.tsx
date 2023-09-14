@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Box, Card, Typography } from "@mui/material";
+import { Box} from "@mui/material";
 import { Services } from "../helper-objects";
 
 const CustomVerticalSlider = () => {
@@ -21,9 +21,8 @@ const CustomVerticalSlider = () => {
     <Box width="92%" sx={{ margin: { xs: "0 auto" } }}>
       <Slider {...settings}>
         {Services.map((service) => (
-          <div>
+          <div key={service.index}>
             <Box
-              key={service.index}
               sx={{
                 height: "200px",
                 m: "1rem",

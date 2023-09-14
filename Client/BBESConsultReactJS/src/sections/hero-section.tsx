@@ -2,18 +2,13 @@ import {
   Box,
   Typography,
   Button,
-  ButtonBase,
   useTheme,
   useMediaQuery,
 } from "@mui/material";
-//import Carousel from 'react-responsive-carousel';
-import React, { ComponentProps } from "react";
-import { Carousel } from "react-responsive-carousel";
 import HeroBar from "../components/top-navbar-hero";
 import CustomHorizontalSlider from "./custom-horizontal-slider";
 import CustomVerticalSlider from "./custom-vertical-slider";
 
-export type CarouselProps = Partial<ComponentProps<typeof Carousel>>;
 
 //#fcf09f -light yellow
 //
@@ -27,7 +22,7 @@ const HeroSection = () => {
         margin:"0 auto",
         maxWidth:"1920px",
         maxHeight:"963px",
-        width: "100%",
+        width: "100vw",
         height: "100vh", // adjust as needed
         backgroundImage: 'url("./images/BBESBuldigNightSkyBWEn.png")',
         backgroundSize: "cover",
@@ -88,8 +83,8 @@ const HeroSection = () => {
         </Box>
         <Box
           sx={{
-            
-           
+            //check OUT TO DO:
+            maxWidth: { xs: "500px", md: "800", xl:"900" },
             width: { xs: "100%", lg: "60%" },
             m: { lg: "5.7rem 0px " },
           }}
