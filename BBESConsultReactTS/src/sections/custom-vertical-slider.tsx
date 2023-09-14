@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Box, useTheme, useMediaQuery } from "@mui/material";
 import { Services } from "../helper-objects";
 
+
 const CustomVerticalSlider = () => {
   const theme = useTheme();
   const isXSmall = useMediaQuery(theme.breakpoints.down('xs'));
@@ -34,19 +35,29 @@ const CustomVerticalSlider = () => {
         {Services.map((service) => (
           <div key={service.index}>
             <Box
+            key={service.index}
+            sx={{
+              position: 'relative',  // Add this
+              height: "250px",
+              m: "1rem",
+              boxShadow: 3,
+              borderRadius: "25px",
+              overflow: 'hidden'
+            }}
+          >
+            <Box
+              component="img"
+              src={service.image}
               sx={{
-                height: "200px",
-                m: "1rem",
-                boxShadow: 3,
-                borderRadius: "25px",
+                position: 'absolute',  // Make the image take the full space of its parent
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: "cover"
               }}
-            >
-              <Box
-                component="img"
-                src={service.image}
-                sx={{ objectFit: "cover", height: "400px" }}
-              />
-            </Box>
+            />
+          </Box>
           </div>
         ))}
       </Slider>
