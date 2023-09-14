@@ -1,19 +1,33 @@
 {
-  "nav-bar":{
+  "nav-bar": {
     "home": "НАЧАЛО",
     "about": "ЗА НАС",
     "services": "УСЛУГИ",
-    "contact":"КОНТАКТИ"
-  } , 
-  "common":{
+    "contact": "КОНТАКТИ"
+  },
+  "common": {
     "contactUs": "Свържете се с нас",
     "whyUs": "Защо да изберете нас?"
-  } , 
+  },
   "heroSection": {
     "financesAndLaws": "Финанси и Закони",
     "Accounting": "Счетоводни",
     "AND": "и",
     "LegalExpertise": "правни услуги",
     "description": "Предлагаме цялостен набор от финансови, счетоводни, административни и правни услуги, съобразени с нуждите както на юридически лица, така и на индивидуални клиенти."
+  },
+  "services": {
+    "Legal_and_administrative_services": "Правни и административни услуги",
+    "Registration_of_firms_and_consultations": "Регистрация на фирми и консултации",
+    "Financial_advice_budgeting_and_strategies": "Финансови консултации, бюджетиране и стратегии",
+    "Accounting_services": "Счетоводни услуги",
+    "Labor-and-Salary_Services_Human_resources_Personnel": "ТРЗ услуги, човешки ресурси, личен състав",
+    "Labor_Safety": "Безопастност на труда",
+    "Tax_advice_and_tax_protection": "Данъчни консултации и данъчна защита",
+    "Preparation_of_tender_documentation": "Подготовка на тръжна документация",
+    "Acquiring_the_status_of_Residence_of_foreigners": "Придобиване на статут на пребиваване",
+    "Acquisition_and_restoration_of_Bulgarian_citizenship": "Придобиване и възстановяване на българско гражданство",
+    "Investments_consultations_and_services": "Инвестиции – консултации и услуги",
+    "Translation_services": "Преводачески услуги"
   }
 }

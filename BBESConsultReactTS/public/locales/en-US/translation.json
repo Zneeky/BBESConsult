@@ -15,5 +15,19 @@
     "AND": "AND",
     "LegalExpertise": "Legal Expertise",
     "description": "We offer a holistic suite of financial, accounting, administrative, and legal services tailored to meet the needs of both corporate entities and individual clients."
+  },
+  "services": {
+    "Legal_and_administrative_services": "Legal and administrative services",
+    "Registration_of_firms_and_consultations": "Registration of firms and consultations",
+    "Financial_advice_budgeting_and_strategies": "Financial advice, budgeting and strategies",
+    "Accounting_services": "Accounting services",
+    "Labor-and-Salary_Services_Human_resources_Personnel": "Labor-and-Salary Services, Human resources, Personnel",
+    "Labor_Safety": "Labor Safety",
+    "Tax_advice_and_tax_protection": "Tax advice and tax protection",
+    "Preparation_of_tender_documentation": "Preparation of tender documentation",
+    "Acquiring_the_status_of_Residence_of_foreigners": "Acquiring the status of Residence of foreigners",
+    "Acquisition_and_restoration_of_Bulgarian_citizenship": "Acquisition and restoration of Bulgarian citizenship",
+    "Investments_consultations_and_services": "Investments – consultations and services",
+    "Translation_services": "Translation services"
   }
 }
