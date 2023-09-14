@@ -33,9 +33,14 @@ jobs:
       - name: Change to correct directory
         run: cd BBESConsultReactTS
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd BBESConsultReactJS
+          npm install
+
       - name: Build
-        run: npm run build
+        run: |
+          cd BBESConsultReactJS
+          npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
