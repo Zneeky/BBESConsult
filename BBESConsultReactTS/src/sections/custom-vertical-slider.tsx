@@ -1,16 +1,27 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Box} from "@mui/material";
+import { Box, useTheme, useMediaQuery } from "@mui/material";
 import { Services } from "../helper-objects";
 
 const CustomVerticalSlider = () => {
+  const theme = useTheme();
+  const isXSmall = useMediaQuery(theme.breakpoints.down('xs'));
+  const isSmall = useMediaQuery(theme.breakpoints.between('sm', 'md'));
+  const isMedium = useMediaQuery(theme.breakpoints.between('md', 'lg'));
+  let slidesToShowValue = 1; // Default value
+
+  if (isXSmall) {
+    slidesToShowValue = 1; // Adjust value for extra small screens
+  } else if (isSmall) {
+    slidesToShowValue = 2; // Adjust value for small screens
+  } else if (isMedium){
+    slidesToShowValue = 3;
+  }
+
   const settings = {
-    focusOnSelect: true,
-    centerMode: true,
     infinite: true,
-    centerPadding: "60px",
-    slidesToShow: 1,
+    slidesToShow: slidesToShowValue,
     speed: 500,
     rows: 2,
     slidesPerRow: 1,
@@ -18,7 +29,7 @@ const CustomVerticalSlider = () => {
     class: "custom-slider",
   };
   return (
-    <Box width="92%" sx={{ margin: { xs: "0 auto" } }}>
+    <Box width="92%" sx={{ margin: { xs: "0 auto 1.5rem", lg:"0 auto"} }}>
       <Slider {...settings}>
         {Services.map((service) => (
           <div key={service.index}>

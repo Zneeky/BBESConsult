@@ -1,0 +1,19 @@
+{
+  "nav-bar": {
+    "home": "HOME",
+    "about": "ABOUT",
+    "services": "SERVICES",
+    "contact": "CONTACT"
+  },
+  "common": {
+    "contactUs": "Contact Us",
+    "whyUs": "Why Us?"
+  },
+  "heroSection": {
+    "financesAndLaws": "Finances and Laws",
+    "Accounting": "Accounting",
+    "AND": "AND",
+    "LegalExpertise": "Legal Expertise",
+    "description": "We offer a holistic suite of financial, accounting, administrative, and legal services tailored to meet the needs of both corporate entities and individual clients."
+  }
+}

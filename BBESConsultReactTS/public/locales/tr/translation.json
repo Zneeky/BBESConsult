@@ -1,0 +1,19 @@
+{
+  "nav-bar": {
+    "home": "HOME",
+    "about": "HAKKIMIZDA",
+    "services": "HİZMETLER",
+    "contact": "İLETİŞİM"
+  },
+  "common": {
+    "contactUs": "Bize ulaşın",
+    "whyUs": "Neden Biz?"
+  },
+  "heroSection": {
+    "financesAndLaws": "Finans ve Kanunlar",
+    "Accounting": "Muhasebe",
+    "AND": "VE",
+    "LegalExpertise": "Yasal Uzmanlık",
+    "description": "Hem tüzel kişilerin hem de bireysel müşterilerin ihtiyaçlarını karşılamak üzere tasarlanmış bütünsel bir mali, muhasebe, idari ve hukuki hizmetler paketi sunuyoruz."
+  }
+}

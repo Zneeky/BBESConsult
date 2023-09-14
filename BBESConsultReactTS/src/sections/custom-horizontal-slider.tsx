@@ -14,7 +14,7 @@ const CustomHorizontalSlider = () => {
     class: "custom-slider",
   };
   return (
-    <Box width="92%" sx={{margin:{lg:"0 auto"}}}>
+    <Box width="90%" sx={{margin:{lg:"0 auto"}}}>
       <Slider {...settings}>
         {Services.map((service) => (
           <div key={service.index}>
