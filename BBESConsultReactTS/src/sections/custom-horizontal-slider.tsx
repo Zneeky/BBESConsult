@@ -3,10 +3,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Box, Typography } from "@mui/material";
 import useServices from "../hooks/services";
+import { useTranslation } from "react-i18next";
 
 
 const CustomHorizontalSlider = () => {
   const services= useServices();
+
+  const { i18n } = useTranslation();
+  const isTurkish = i18n.language === 'tr-TR';
+
   const settings = {
     focusOnSelect: true,
     infinite: true,
@@ -16,10 +21,10 @@ const CustomHorizontalSlider = () => {
     class: "custom-slider",
   };
   return (
-    <Box width="90%" sx={{ margin: { lg: "0 auto" } }}>
+    <Box width="90%" sx={{ margin: { lg: "0 auto" } }}  >
       <Slider {...settings}>
         {services.map((service) => (
-          <div key={service.index}>
+          <div key={service.index} >
             <Box
               key={service.index}
               sx={{
@@ -55,8 +60,10 @@ const CustomHorizontalSlider = () => {
                   backgroundColor: "rgba(0, 0, 0, 0.5)"
                   
                 }}
+                
               />
               <Typography
+                variant="h1"
                 sx={{
                   position: "absolute",
                   top: "50%", // Center vertically
@@ -65,7 +72,10 @@ const CustomHorizontalSlider = () => {
                   color: "white", // Assuming you want white text
                   padding: "0.5rem",
                   borderRadius: "5px",
+                  fontSize:{md:"3.5vw",lg:"2.2vw"},
+                  fontFamily: isTurkish ? 'Inter, sans-serif' : 'Bebas Neue Regular, sans-serif'
                 }}
+                 
               >
                 {service.title}
               </Typography>

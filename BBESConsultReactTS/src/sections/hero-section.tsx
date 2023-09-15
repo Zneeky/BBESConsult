@@ -54,24 +54,25 @@ const HeroSection = () => {
             variant="h1"
             sx={{
               fontSize: {
-                xs: "3.5rem",
+                xs: "3rem",
                 sm: "3.5rem",
                 md: "4.5rem",
                 lg: "5.5rem",
                 xl: "7.5rem",
               },
+              m:{xs:"0rem 3rem",md:"0rem 0px"}
             }}
           >
             {t('heroSection.Accounting')} {!isTablet && <br />} {t('heroSection.AND')} {!isTablet && <br />} {t('heroSection.LegalExpertise')}
           </Typography>
           {!isTablet && (
             <Box sx={{ width: "80%" }}>
-              <Typography color="#fcf09f" variant="h6" gutterBottom>
+              <Typography color="#fcf09f" variant="h6" gutterBottom >
                 {t('heroSection.description')}
               </Typography>
             </Box>
           )}
-          <Box display="flex" gap={2} sx={{m:{xs:"2rem 0px",xl:"0rem 0px"}}} >
+          <Box display="flex"  gap={2} sx={{m:{xs:"2rem 3rem",md:"1rem 0px", lg:"0"}}} >
             <Button
               sx={{
                 border: "3px solid yellow",
@@ -95,7 +96,7 @@ const HeroSection = () => {
         <Box
           sx={{
             width: { xs: "100%", lg: "60%" },
-            m: { md:"9rem 0px 0px",lg: "5.7rem 0px " },
+            m: { md:"9rem 0px 0px",lg:"6.5rem 0px", xl: "8.7rem 0px " },
           }}
         >
           {isMobile ? <CustomVerticalSlider /> : <CustomHorizontalSlider />}

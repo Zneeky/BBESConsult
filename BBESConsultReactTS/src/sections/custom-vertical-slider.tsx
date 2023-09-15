@@ -3,9 +3,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
 import useServices from "../hooks/services";
+import { useTranslation } from "react-i18next";
 
 
 const CustomVerticalSlider = () => {
+  const { i18n } = useTranslation();
+  const isTurkish = i18n.language === 'tr-TR';
   const services = useServices();
   const theme = useTheme();
   const isXSmall = useMediaQuery(theme.breakpoints.down('xs'));
@@ -71,6 +74,7 @@ const CustomVerticalSlider = () => {
                 }}
               />
               <Typography
+                variant="h1"
                 sx={{
                   position: "absolute",
                   top: "50%", // Center vertically
@@ -79,7 +83,10 @@ const CustomVerticalSlider = () => {
                   color: "white", // Assuming you want white text
                   padding: "0.5rem",
                   borderRadius: "5px",
+                  fontSize:{xs:"10vw",md:"3.5vw",lg:"2.2vw"},
+                  fontFamily: isTurkish ? 'Inter, sans-serif' : 'Bebas Neue Regular, sans-serif'
                 }}
+                 
               >
                 {service.title}
               </Typography>
