@@ -1,32 +1,12 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Box} from "@mui/material";
-import { Services } from "../helper-objects";
+import { Box, Typography } from "@mui/material";
+import useServices from "../hooks/services";
 
-const Bervices = 
-[
-{
-    image:"/images/AccountsImageBlueLayer.png",
-    title:"Service 1",
-    link:"",
-    index:1
-},
-{
-    image:"/images/BW-table-consult.png",
-    title:"Service 2",
-    link:"",
-    index:2
-},
-{
-    image:"/images/BI_ITC-Consult-1.jpg",
-    title:"Service 3",
-    link:"",
-    index:3
-},
-]
 
 const CustomHorizontalSlider = () => {
+  const services= useServices();
   const settings = {
     focusOnSelect: true,
     infinite: true,
@@ -36,34 +16,60 @@ const CustomHorizontalSlider = () => {
     class: "custom-slider",
   };
   return (
-    <Box width="90%" sx={{margin:{lg:"0 auto"}}}>
+    <Box width="90%" sx={{ margin: { lg: "0 auto" } }}>
       <Slider {...settings}>
-        {Bervices.map((service) => (
+        {services.map((service) => (
           <div key={service.index}>
             <Box
-            key={service.index}
-            sx={{
-              position: 'relative',  // Add this
-              height: "400px",
-              m: "1rem",
-              boxShadow: 3,
-              borderRadius: "25px",
-              overflow: 'hidden'
-            }}
-          >
-            <Box
-              component="img"
-              src={service.image}
+              key={service.index}
               sx={{
-                position: 'absolute',  // Make the image take the full space of its parent
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                objectFit: "cover"
+                position: "relative", // Add this
+                height: "400px",
+                m: "1rem",
+                boxShadow: 3,
+                borderRadius: "25px",
+                overflow: "hidden",
               }}
-            />
-          </Box>
+            >
+              <Box
+                component="img"
+                src={service.image}
+                sx={{
+                  position: "absolute", // Make the image take the full space of its parent
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  
+                }}
+              />
+              <Box
+                sx={{
+                  position: "absolute", // Make the image take the full space of its parent
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  backgroundColor: "rgba(0, 0, 0, 0.5)"
+                  
+                }}
+              />
+              <Typography
+                sx={{
+                  position: "absolute",
+                  top: "50%", // Center vertically
+                  left: "50%", // Center horizontally
+                  transform: "translate(-50%, -50%)", // Ensure it's centered
+                  color: "white", // Assuming you want white text
+                  padding: "0.5rem",
+                  borderRadius: "5px",
+                }}
+              >
+                {service.title}
+              </Typography>
+            </Box>
           </div>
         ))}
       </Slider>

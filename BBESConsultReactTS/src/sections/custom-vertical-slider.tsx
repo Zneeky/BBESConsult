@@ -1,11 +1,12 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Box, useTheme, useMediaQuery } from "@mui/material";
-import { Services } from "../helper-objects";
+import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
+import useServices from "../hooks/services";
 
 
 const CustomVerticalSlider = () => {
+  const services = useServices();
   const theme = useTheme();
   const isXSmall = useMediaQuery(theme.breakpoints.down('xs'));
   const isSmall = useMediaQuery(theme.breakpoints.between('sm', 'md'));
@@ -32,7 +33,7 @@ const CustomVerticalSlider = () => {
   return (
     <Box width="92%" sx={{ margin: { xs: "0 auto 1.5rem", lg:"0 auto"} }}>
       <Slider {...settings}>
-        {Services.map((service) => (
+        {services.map((service) => (
           <div key={service.index}>
             <Box
             key={service.index}
@@ -57,6 +58,31 @@ const CustomVerticalSlider = () => {
                 objectFit: "cover"
               }}
             />
+            <Box
+                sx={{
+                  position: "absolute", // Make the image take the full space of its parent
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  backgroundColor: "rgba(0, 0, 0, 0.5)"
+                  
+                }}
+              />
+              <Typography
+                sx={{
+                  position: "absolute",
+                  top: "50%", // Center vertically
+                  left: "50%", // Center horizontally
+                  transform: "translate(-50%, -50%)", // Ensure it's centered
+                  color: "white", // Assuming you want white text
+                  padding: "0.5rem",
+                  borderRadius: "5px",
+                }}
+              >
+                {service.title}
+              </Typography>
           </Box>
           </div>
         ))}
