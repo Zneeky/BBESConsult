@@ -83,7 +83,7 @@ const CustomVerticalSlider = () => {
                   color: "white", // Assuming you want white text
                   padding: "0.5rem",
                   borderRadius: "5px",
-                  fontSize:{xs:"10vw",md:"3.5vw",lg:"2.2vw"},
+                  fontSize:{xs:"8vw",sm:"4.5vw" ,md:"3.5vw",lg:"2.2vw"},
                   fontFamily: isTurkish ? 'Inter, sans-serif' : 'Bebas Neue Regular, sans-serif'
                 }}
                  

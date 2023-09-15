@@ -22,7 +22,7 @@ const HeroSection = () => {
       sx={{
         margin: "0 auto",
         maxWidth: "1920px",
-        maxHeight: "931px",
+        maxHeight: "1080px",
         
          // adjust as needed
         backgroundImage: 'url("./images/BBESBuldigNightSkyBWEn.png")',
