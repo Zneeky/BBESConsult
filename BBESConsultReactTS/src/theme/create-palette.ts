@@ -3,6 +3,7 @@ import { common } from "@mui/material/colors";
 const colorTokens = {
    lightMode: {
     Text: "#000000", //black
+    //Text: "#263E80", //darkBlue
     Background: "#ffffff",//white
     Primary: "#06b3f8", //sky blue
     Secondary: "#fcfcfc", // white
