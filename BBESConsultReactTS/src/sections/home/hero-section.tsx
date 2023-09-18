@@ -4,22 +4,28 @@ import {
   Button,
   useTheme,
   useMediaQuery,
+  SvgIcon,
 } from "@mui/material";
 import HeroBar from "../../components/top-navbar-hero";
 import CustomHorizontalSlider from "../../components/custom-horizontal-slider";
 import CustomVerticalSlider from "../../components/custom-vertical-slider";
 import { useTranslation } from "react-i18next";
 import { useState, useEffect, useRef } from "react";
-import ReactFlipCard from "reactjs-flip-card";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faAward,
+  faStar,
+  faFileLines,
+  faScaleBalanced
+} from "@fortawesome/free-solid-svg-icons";
+import CountUp from 'react-countup';
 
-//#FDB810
 
 const HeroSection = () => {
   const theme = useTheme();
 
   const [view, setView] = useState("initial"); // "initial", "second"
   const heroSectionRef = useRef<HTMLDivElement | null>(null);
-  const rotation = view === "initial" ? "0deg" : "0deg";
 
   const isTablet = useMediaQuery(theme.breakpoints.down("lg"));
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -79,7 +85,7 @@ const HeroSection = () => {
           <Box
             sx={{
               width: "100%", // Ensure it takes the full width of the container
-               // Ensure it takes the full height of the container
+              // Ensure it takes the full height of the container
               display: { xs: "inline-block", lg: "flex" },
               m: { xs: "2rem  0px", lg: "7rem 0px" },
               padding: { xs: "0px 1rem", md: "0px 0px 0px 5rem" },
@@ -175,7 +181,165 @@ const HeroSection = () => {
               height: "100%", // Ensure it takes the full height of the container
             }}
           >
-            <Typography color="yellow">QKOOO</Typography>
+            <Box
+              sx={{
+                m: { xs: "3rem  0rem", lg: "0rem 6rem" },
+                padding: { xs: "0px 1rem", md: "0px 0px 0px 0rem" },
+                background: "rgba(0, 0, 0, 0.35)",
+                backdropFilter: "blur(16.7px)",
+                WebkitBackdropFilter: "blur(15.7px)",
+                maxHeight: "690px",
+                height: "100%",
+              }}
+            >
+              <Box display="flex" flexDirection="column" width="100%">
+                <Box display="flex">
+                  <Typography
+                    variant="h1"
+                    color="white"
+                    sx={{
+                      m: "1rem auto",
+                      fontSize: { xs: "4vw", sm: "4vw", xl: "4vw" },
+                    }}
+                  >
+                    BBES Consult Accounting and Law Firm
+                  </Typography>
+                </Box>
+                <Box display="flex">
+                  <Typography
+                    variant="h5"
+                    color="white"
+                    sx={{
+                      m: "1rem auto",
+                      fontSize: { xs: "1vw", sm: "1vw", xl: "1vw" },
+                    }}
+                  >
+                    Integrity, Quality and Loyalty! We are with you on the path
+                    to success!
+                  </Typography>
+                </Box>
+                <Box
+                  sx={{
+                    display: { xs: "inline-block", md: "flex" },
+                    maxHeight: "300px",
+                  }}
+                  justifyContent="space-evenly"
+                  mt="2rem"
+                >
+                  {/*ACHIEVEMNT */}
+                  <Box
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="center"
+                    justifyContent="center"
+                  >
+                    <Box display="flex" alignItems="center">
+                      <SvgIcon fontSize="large">
+                        <FontAwesomeIcon icon={faAward} color="yellow" />
+                      </SvgIcon>
+                      <Typography
+                        variant="h3"
+                        sx={{ fontSize: { xs: "5vw", md: "2vw", lg: "2vw" } }}
+                        color="yellow"
+                      >
+                        <CountUp end={25} duration={3} key={view} />+
+                      </Typography>
+                    </Box>
+                    <Typography variant="h5" color="yellow">
+                      YEARS OF EXPERIENCE
+                    </Typography>
+                  </Box>
+                  {/*ACHIEVEMNT */}
+                  <Box
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="center"
+                    justifyContent="center"
+                  >
+                    <Box display="flex" alignItems="center">
+                      <SvgIcon fontSize="large">
+                        <FontAwesomeIcon icon={faStar} color="yellow" />
+                      </SvgIcon>
+                      <Typography
+                        variant="h3"
+                        sx={{ fontSize: { xs: "5vw", md: "2vw", lg: "2vw" } }}
+                        color="yellow"
+                      >
+                        <CountUp end={350} duration={3} key={view} />+
+                      </Typography>
+                    </Box>
+                    <Typography variant="h5" color="yellow">
+                      CLIENTS
+                    </Typography>
+                  </Box>
+                  {/*ACHIEVEMNT */}
+                  <Box
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="center"
+                    justifyContent="center"
+                  >
+                    <Box display="flex" alignItems="center">
+                      <SvgIcon fontSize="large">
+                        <FontAwesomeIcon icon={faFileLines} color="yellow" />
+                      </SvgIcon>
+                      <Typography
+                        variant="h3"
+                        sx={{ fontSize: { xs: "5vw", md: "2vw", lg: "2vw" } }}
+                        color="yellow"
+                      >
+                        <CountUp end={2500} duration={4} key={view} />+
+                      </Typography>
+                    </Box>
+                    <Typography variant="h5" color="yellow">
+                      DOCUMENTS PER MONTH
+                    </Typography>
+                  </Box>
+                  {/*ACHIEVEMNT */}
+                  <Box
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="center"
+                    justifyContent="center"
+                  >
+                    <Box display="flex" alignItems="center">
+                      <SvgIcon fontSize="large">
+                        <FontAwesomeIcon icon={faScaleBalanced} color="yellow" />
+                      </SvgIcon>
+                      <Typography
+                        variant="h3"
+                        sx={{ fontSize: { xs: "5vw", md: "2vw", lg: "2vw" } }}
+                        color="yellow"
+                      >
+                        <CountUp end={1000} duration={3} key={view} />+
+                      </Typography>
+                    </Box>
+                    <Typography variant="h5" color="yellow">
+                      SOLVED CASES
+                    </Typography>
+                  </Box>
+                </Box>
+                {/*ABOUT PARAGRAPH*/}
+                <Box width="100%">
+                  <Box m="5rem auto 2rem">
+                    <Typography padding="3rem" color="white">
+                      We are a dedicated accounting and law firm with a team of
+                      lawyers, accountants, and financial advisors passionate
+                      about supporting business growth in challenging economic
+                      times. We cater to a diverse range of clients, from IT
+                      companies to retailers and foreign contractors. Our
+                      services aim to help clients navigate business challenges
+                      and bolster the Bulgarian economy amidst global economic
+                      shifts. Our leadership team comprises experts like Binay
+                      Bakir, specializing in tax and labor law; Beynaz Zakir,
+                      who oversees our Accounting division; and Emirhan Binay
+                      Bakir, a New Castle University accounting graduate who
+                      manages our international clientele.
+                    </Typography>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
           </Box>
           {/*Flippable content */}
         </Box>
