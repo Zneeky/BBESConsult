@@ -18,19 +18,6 @@ const TrustedBy = () => {
     // ... add more companies
   ];
 
-  const images=["/images/brands-logos/zeko_logo.png","/images/brands-logos/LogoX.png","/images/brands-logos/zeko_logo.png","/images/brands-logos/zeko_logo.png","/images/brands-logos/zeko_logo.png","/images/brands-logos/zeko_logo.png"]
-
-  const settings = {
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 2000,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
-    
-  };
-
   return (
     <Box
       sx={{
@@ -42,10 +29,10 @@ const TrustedBy = () => {
         alignItems: "center",
         justifyContent: "center",
         position: "relative",
-        top: "-40px", // This will make the TrustedBy section overlap the section above it by 50px
+        top: "-60px", // This will make the TrustedBy section overlap the section above it by 50px
         backgroundColor: "#fff", // Assuming the background color of the TrustedBy section is white
-        borderTopLeftRadius: "50px", // Rounded top left corner
-        borderTopRightRadius: "50px", // Rounded top right corner
+        borderTopLeftRadius: "60px", // Rounded top left corner
+        borderTopRightRadius: "60px", // Rounded top right corner
       }}
     >
       <Typography

@@ -16,10 +16,10 @@ import {
   faAward,
   faStar,
   faFileLines,
-  faScaleBalanced
+  faScaleBalanced,
+  faRecycle,
 } from "@fortawesome/free-solid-svg-icons";
-import CountUp from 'react-countup';
-
+import CountUp from "react-countup";
 
 const HeroSection = () => {
   const theme = useTheme();
@@ -30,6 +30,14 @@ const HeroSection = () => {
   const isTablet = useMediaQuery(theme.breakpoints.down("lg"));
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const { t } = useTranslation();
+
+  const handleFlipContent = () => {
+    if (view === "initial") {
+      setView("second");
+    } else {
+      setView("initial");
+    }
+  };
 
   useEffect(() => {
     const handleScroll = (e: any) => {
@@ -58,6 +66,7 @@ const HeroSection = () => {
         // width:"100%",
         maxWidth: "1920px",
         maxHeight: "1080px",
+        height: "1160px",
         backgroundImage: 'url("./images/BBESBuldigNightSkyBWEn.png")',
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -189,7 +198,7 @@ const HeroSection = () => {
                 background: "rgba(0, 0, 0, 0.35)",
                 backdropFilter: "blur(16.7px)",
                 WebkitBackdropFilter: "blur(15.7px)",
-                maxHeight: "690px",
+                maxHeight: {xs:"740px",md:"690px"},
                 height: "100%",
               }}
             >
@@ -200,7 +209,13 @@ const HeroSection = () => {
                     color="white"
                     sx={{
                       m: "1rem auto",
-                      fontSize: { xs: "7vw", sm: "7vw",md:"6vw", lg:"4.5vw" ,xl: "4vw" },
+                      fontSize: {
+                        xs: "7vw",
+                        sm: "7vw",
+                        md: "6vw",
+                        lg: "4.5vw",
+                        xl: "4vw",
+                      },
                     }}
                   >
                     BBES Consult Accounting and Law Firm
@@ -212,7 +227,13 @@ const HeroSection = () => {
                     color="white"
                     sx={{
                       m: "1rem auto",
-                      fontSize: { xs: "2.6vw", sm: "2.4vw", md:"2vw",lg:"1.5vw",xl: "1.3vw" },
+                      fontSize: {
+                        xs: "2.6vw",
+                        sm: "2.4vw",
+                        md: "2vw",
+                        lg: "1.5vw",
+                        xl: "1.3vw",
+                      },
                     }}
                   >
                     Integrity, Quality and Loyalty! We are with you on the path
@@ -256,7 +277,7 @@ const HeroSection = () => {
                     flexDirection="column"
                     alignItems="center"
                     justifyContent="center"
-                    sx={{mt:{xs:"1.5rem", md:"0rem"}}}
+                    sx={{ mt: { xs: "1.5rem", md: "0rem" } }}
                   >
                     <Box display="flex" alignItems="center">
                       <SvgIcon fontSize="large">
@@ -280,7 +301,7 @@ const HeroSection = () => {
                     flexDirection="column"
                     alignItems="center"
                     justifyContent="center"
-                    sx={{mt:{xs:"1.5rem", md:"0rem"}}}
+                    sx={{ mt: { xs: "1.5rem", md: "0rem" } }}
                   >
                     <Box display="flex" alignItems="center">
                       <SvgIcon fontSize="large">
@@ -304,11 +325,14 @@ const HeroSection = () => {
                     flexDirection="column"
                     alignItems="center"
                     justifyContent="center"
-                    sx={{mt:{xs:"1.5rem", md:"0rem"}}}
+                    sx={{ mt: { xs: "1.5rem", md: "0rem" } }}
                   >
                     <Box display="flex" alignItems="center">
                       <SvgIcon fontSize="large">
-                        <FontAwesomeIcon icon={faScaleBalanced} color="yellow" />
+                        <FontAwesomeIcon
+                          icon={faScaleBalanced}
+                          color="yellow"
+                        />
                       </SvgIcon>
                       <Typography
                         variant="h3"
@@ -326,7 +350,18 @@ const HeroSection = () => {
                 {/*ABOUT PARAGRAPH*/}
                 <Box width="100%">
                   <Box m="5rem auto 2rem">
-                    <Typography sx={{p:{xs:"",sm:"",md:"3rem 6rem",lg:"3rem 7rem"}, fontSize:{xs:"",sm:"2.3vw",md:"2vw",lg:"1.3rem"}}} color="white">
+                    <Typography
+                      sx={{
+                        p: { xs: "", sm: "", md: "3rem 6rem", lg: "3rem 7rem" },
+                        fontSize: {
+                          xs: "",
+                          sm: "2.4vw",
+                          md: "2vw",
+                          lg: "1.3rem",
+                        },
+                      }}
+                      color="white"
+                    >
                       We are a dedicated accounting and law firm with a team of
                       lawyers, accountants, and financial advisors passionate
                       about supporting business growth in challenging economic
@@ -344,6 +379,13 @@ const HeroSection = () => {
           {/*Flippable content */}
         </Box>
         {/*perspective box */}
+        {isTablet && (
+          <Box width="100%" display="flex" justifyContent="center" alignItems="center">
+          <Button onClick={handleFlipContent}>
+            <FontAwesomeIcon size="2x" icon={faRecycle} />
+          </Button>
+          </Box>
+        )}
       </Box>
     </Box>
   );
