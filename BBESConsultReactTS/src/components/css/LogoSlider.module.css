@@ -9,7 +9,6 @@
   
   .logos {
     overflow: hidden;
-    padding: 60px 0;
     background: white;
     white-space: nowrap;
     position: relative;
@@ -41,7 +40,7 @@
   
   .logos-slide {
     display: inline-block;
-    animation: 35s slide infinite linear;
+    animation: 20s slide infinite linear;
   }
   
   .logos-slide img {

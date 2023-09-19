@@ -40,6 +40,19 @@ const LogoSlider: React.FC = () => {
             <img key={company.name} src={company.logo} alt={company.name} />
         ))}
       </div>
+      <div className={styles["logos-slide"]}>
+        {/* <img src="./logos/3m.svg" />
+        <img src="./logos/barstool-store.svg" />
+        <img src="./logos/budweiser.svg" />
+        <img src="./logos/buzzfeed.svg" />
+        <img src="./logos/forbes.svg" />
+        <img src="./logos/macys.svg" />
+        <img src="./logos/menshealth.svg" />
+        <img src="./logos/mrbeast.svg" /> */}
+        {companies.map((company)=>(
+            <img key={company.name} src={company.logo} alt={company.name} />
+        ))}
+      </div>
     </div>
   );
 };

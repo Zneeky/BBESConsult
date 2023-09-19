@@ -12,6 +12,9 @@ const TrustedBy = () => {
     { name: "Company4", logo: "/images/brands-logos/zeko_logo.png" },
     { name: "Company5", logo: "/images/brands-logos/zeko_logo.png" },
     { name: "Company6", logo: "/images/brands-logos/zeko_logo.png" },
+    { name: "Company7", logo: "/images/brands-logos/LogoX.png" },
+    { name: "Company8", logo: "/images/brands-logos/LogoX.png" },
+    
     // ... add more companies
   ];
 
