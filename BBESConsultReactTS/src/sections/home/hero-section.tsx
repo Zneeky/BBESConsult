@@ -55,6 +55,7 @@ const HeroSection = () => {
       ref={heroSectionRef}
       sx={{
         margin: "0 auto",
+        // width:"100%",
         maxWidth: "1920px",
         maxHeight: "1080px",
         backgroundImage: 'url("./images/BBESBuldigNightSkyBWEn.png")',
@@ -199,7 +200,7 @@ const HeroSection = () => {
                     color="white"
                     sx={{
                       m: "1rem auto",
-                      fontSize: { xs: "4vw", sm: "4vw", xl: "4vw" },
+                      fontSize: { xs: "7vw", sm: "7vw",md:"6vw", lg:"4.5vw" ,xl: "4vw" },
                     }}
                   >
                     BBES Consult Accounting and Law Firm
@@ -211,7 +212,7 @@ const HeroSection = () => {
                     color="white"
                     sx={{
                       m: "1rem auto",
-                      fontSize: { xs: "1vw", sm: "1vw", xl: "1vw" },
+                      fontSize: { xs: "2.6vw", sm: "2.4vw", md:"2vw",lg:"1.5vw",xl: "1.3vw" },
                     }}
                   >
                     Integrity, Quality and Loyalty! We are with you on the path
@@ -255,6 +256,7 @@ const HeroSection = () => {
                     flexDirection="column"
                     alignItems="center"
                     justifyContent="center"
+                    sx={{mt:{xs:"1.5rem", md:"0rem"}}}
                   >
                     <Box display="flex" alignItems="center">
                       <SvgIcon fontSize="large">
@@ -278,6 +280,7 @@ const HeroSection = () => {
                     flexDirection="column"
                     alignItems="center"
                     justifyContent="center"
+                    sx={{mt:{xs:"1.5rem", md:"0rem"}}}
                   >
                     <Box display="flex" alignItems="center">
                       <SvgIcon fontSize="large">
@@ -301,6 +304,7 @@ const HeroSection = () => {
                     flexDirection="column"
                     alignItems="center"
                     justifyContent="center"
+                    sx={{mt:{xs:"1.5rem", md:"0rem"}}}
                   >
                     <Box display="flex" alignItems="center">
                       <SvgIcon fontSize="large">
@@ -322,7 +326,7 @@ const HeroSection = () => {
                 {/*ABOUT PARAGRAPH*/}
                 <Box width="100%">
                   <Box m="5rem auto 2rem">
-                    <Typography padding="3rem" color="white">
+                    <Typography sx={{p:{xs:"",sm:"",md:"3rem 6rem",lg:"3rem 7rem"}, fontSize:{xs:"",sm:"2.3vw",md:"2vw",lg:"1.3rem"}}} color="white">
                       We are a dedicated accounting and law firm with a team of
                       lawyers, accountants, and financial advisors passionate
                       about supporting business growth in challenging economic
@@ -330,11 +334,7 @@ const HeroSection = () => {
                       companies to retailers and foreign contractors. Our
                       services aim to help clients navigate business challenges
                       and bolster the Bulgarian economy amidst global economic
-                      shifts. Our leadership team comprises experts like Binay
-                      Bakir, specializing in tax and labor law; Beynaz Zakir,
-                      who oversees our Accounting division; and Emirhan Binay
-                      Bakir, a New Castle University accounting graduate who
-                      manages our international clientele.
+                      shifts.
                     </Typography>
                   </Box>
                 </Box>
