@@ -1,0 +1,49 @@
+@keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .reviews {
+    overflow: hidden;
+    background: white;
+    white-space: nowrap;
+    position: relative;
+  }
+  
+  .reviews:before,
+  .reviews:after {
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+  }
+  
+  .reviews:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+  }
+  
+  .reviews:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+  }
+  
+  .reviews:hover .reviews-slide {
+    animation-play-state: paused;
+  }
+  
+  .reviews-slide {
+    display: inline-flex;
+    animation: 20s slide infinite linear;
+  }
+  
+  .reviews-slide > * {
+    display: inline-block;
+    margin: 0 40px;
+  }

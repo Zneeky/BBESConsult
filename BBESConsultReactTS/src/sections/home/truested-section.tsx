@@ -1,22 +1,7 @@
 import { Box, Typography } from "@mui/material";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import LogoSlider from "../../components/logo-slider";
 
 const TrustedBy = () => {
-  const companies = [
-    { name: "Zeko", logo: "/images/brands-logos/zeko_logo.png" },
-    { name: "Company2", logo: "/path/to/logo2.png" },
-    { name: "Company3", logo: "/images/brands-logos/LogoX.png" },
-    { name: "Company4", logo: "/images/brands-logos/zeko_logo.png" },
-    { name: "Company5", logo: "/images/brands-logos/zeko_logo.png" },
-    { name: "Company6", logo: "/images/brands-logos/zeko_logo.png" },
-    { name: "Company7", logo: "/images/brands-logos/LogoX.png" },
-    { name: "Company8", logo: "/images/brands-logos/LogoX.png" },
-    
-    // ... add more companies
-  ];
 
   return (
     <Box
