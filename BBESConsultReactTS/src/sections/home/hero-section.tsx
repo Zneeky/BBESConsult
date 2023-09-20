@@ -100,6 +100,10 @@ const HeroSection = () => {
               m: { xs: "2rem  0px", lg: "7rem 0px" },
               padding: { xs: "0px 1rem", md: "0px 0px 0px 5rem" },
               backfaceVisibility: "hidden",
+              transform: "translateZ(0)",
+              WebkitBackfaceVisibility: "hidden",
+              WebkitPerspective:0,
+              WebkitTransform: "translate3d(0)",
             }}
           >
             <Box sx={{ display: "block", width: { xs: "100%", lg: "40%" } }}>
@@ -184,6 +188,9 @@ const HeroSection = () => {
             sx={{
               backfaceVisibility: "hidden", // Hide when flipped
               transform: "rotateX(180deg)", // Start rotated
+              WebkitBackfaceVisibility: "hidden",
+              WebkitPerspective:0,
+              WebkitTransform: "translate3d(0)",
               position: "absolute", // Absolute positioning
               top: 0,
               left: 0,

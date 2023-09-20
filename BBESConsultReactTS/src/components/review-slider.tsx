@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./css/ReviewsSlider.module.css";
-import { Card, Typography, Box } from '@mui/material';
+import { Typography, Box } from '@mui/material';
 
 const ReviewsSlider: React.FC = () => {
   const reviews = [
