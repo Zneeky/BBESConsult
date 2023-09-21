@@ -5,13 +5,15 @@ import ServicesSection from "../sections/home/services-section";
 import ReviewsSection from "../sections/home/reviews-section";
 import ContactSection from "../sections/home/contact-section";
 import Footer from "../components/footer";
+import MeetTheTeamSection from "../sections/home/meet-team";
 
 const HomePage = () => {
   return (
     <>
       <Box width="100%">
         <HeroSection />
-        <TrustedBy />
+        {/* <TrustedBy /> */}
+        <MeetTheTeamSection />
         <ServicesSection />
         
         <ReviewsSection />
