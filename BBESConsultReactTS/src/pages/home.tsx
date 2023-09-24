@@ -1,6 +1,6 @@
 import { Box, Divider } from "@mui/material";
 import HeroSection from "../sections/home/hero-section";
-import TrustedBy from "../sections/home/truested-section";
+// import TrustedBy from "../sections/home/truested-section";
 import ServicesSection from "../sections/home/services-section";
 import ReviewsSection from "../sections/home/reviews-section";
 import ContactSection from "../sections/home/contact-section";
@@ -14,8 +14,9 @@ const HomePage = () => {
         <HeroSection />
         {/* <TrustedBy /> */}
         <MeetTheTeamSection />
+        <Divider sx={{color:"black"}}/>
         <ServicesSection />
-        
+        <Divider sx={{color:"black",mt:"3rem"}}/>
         <ReviewsSection />
         <Divider sx={{color:"black"}}/>
         <ContactSection/>

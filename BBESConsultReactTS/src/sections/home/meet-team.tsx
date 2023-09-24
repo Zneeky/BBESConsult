@@ -1,5 +1,5 @@
 import { Box,Typography } from "@mui/material";
-import TeamMembersSlider from "../../components/team-members";
+// import TeamMembersSlider from "../../components/team-members";
 import Leadership from "../../components/team-members";
 
 const MeetTheTeamSection = () => {
