@@ -10,20 +10,30 @@ import {
   SvgIcon,
   Menu,
   MenuItem,
+  Paper
 } from "@mui/material";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next"; // Import useTranslation hook
 import Flag from "react-world-flags";
+import React, { RefObject } from "react";
+import useServices from "../hooks/services";
 
-const HeroBar = () => {
+interface HeroBarProps {
+  servicesSectionRef: RefObject<HTMLDivElement>;
+}
+
+const HeroBar: React.FC<HeroBarProps> = ({ servicesSectionRef }) => { 
   const [open, setOpen] = useState(false);
+  const [openServices, setOpenServices] = useState(false);
+  const dropdownServiceRef = useRef<HTMLDivElement | null>(null);
   const [anchorEl, setAnchorEl] = useState(null);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const buttonNavColor = "white";
-  const { i18n } = useTranslation(); // Use the useTranslation hook
+  const { i18n , t} = useTranslation(); // Use the useTranslation hook
+  const services = useServices();
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -73,30 +83,84 @@ const HeroBar = () => {
       }
     };
 
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownServiceRef.current && !dropdownServiceRef.current.contains(event.target as Node)) {
+        handleServicesMenuClose();
+      }
+    };
+
+    const handleServicesMenuOpen = () => {
+      setOpenServices(true);
+    };
+    
+    const handleServicesMenuClose = () => {
+      setOpenServices(false);
+    };
+  
+    
+    const handleServicesButtonClick = () => {
+      handleServicesMenuClose();
+      servicesSectionRef.current?.scrollIntoView({ behavior: 'smooth' }); // Scroll to ServicesSection
+    };
+    
+    const servicesPopover = (
+      <Paper elevation={3} sx={{ position: 'absolute',top:"70px", minWidth: 160, zIndex: 1, borderTop:"4px solid #06b3f8", '&::before': {
+        content: '""',
+        position: 'absolute',
+        top: '-8px', // Adjust as needed
+        left: '50%',
+        transform: 'translateX(-50%)',
+        border: 'solid transparent',
+        borderWidth: '0 8px 8px 8px', // Adjust as needed
+        borderColor: 'transparent transparent #ffffff transparent',
+      }}} ref={dropdownServiceRef} onMouseLeave={handleServicesMenuClose}>
+        <Box sx={{ p: 1, display:"flex",flexDirection:"column" }}>
+          {services.map((service)=>(
+            <Button key={service.title} onClick={() => { handleServicesMenuClose(); }}>
+            <Typography  sx={{ cursor: 'pointer', mb: 1, color:"black" }}>{t(`${service.title}`)}</Typography>
+          </Button>
+          ))}
+        </Box>
+      </Paper>
+    );
+    
+
   const navItems = (
-    <Box sx={{ display: "flex", gap: 4 }}>
-      <Button color="inherit">
+    <Box sx={{ display: "flex", gap: 4 }} >
+      <Button color="inherit" sx={{'&:hover':{backgroundColor:"rgba(6, 179, 248, 0.2)"}}}>
         <Typography variant="button" color={buttonNavColor}>
           Home
         </Typography>
       </Button>
-      <Button color="inherit">
+      <Button color="inherit" sx={{'&:hover':{backgroundColor:"rgba(6, 179, 248, 0.2)"}}}>
         <Typography variant="button" color={buttonNavColor}>
           About
         </Typography>
       </Button>
-      <Button color="inherit">
+      <Button color="inherit" 
+        onClick={handleServicesButtonClick} // Click event to navigate to services section
+        onMouseOver={handleServicesMenuOpen} // Mouse over event to open Services Menu
+        sx={{'&:hover':{backgroundColor:"rgba(6, 179, 248, 0.2)"}}}
+        >
         <Typography variant="button" color={buttonNavColor}>
           Services
         </Typography>
       </Button>
-      <Button color="inherit">
+      {openServices&&(servicesPopover)}
+      <Button color="inherit"  sx={{'&:hover':{backgroundColor:"rgba(6, 179, 248, 0.2)"}}}>
         <Typography variant="button" color={buttonNavColor}>
           Contact
         </Typography>
       </Button>
     </Box>
   );
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <Box

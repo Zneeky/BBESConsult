@@ -20,8 +20,14 @@ import {
   faRecycle,
 } from "@fortawesome/free-solid-svg-icons";
 import CountUp from "react-countup";
+import React, { RefObject } from "react";
 
-const HeroSection = () => {
+
+interface HeroSectionProps {
+  servicesSectionRef: RefObject<HTMLDivElement>; // Define servicesSectionRef prop type
+}
+
+const HeroSection: React.FC<HeroSectionProps> = ({ servicesSectionRef }) => {
   const theme = useTheme();
 
   const [view, setView] = useState("initial"); // "initial", "second"
@@ -75,7 +81,7 @@ const HeroSection = () => {
         padding: "0",
       }}
     >
-      <HeroBar />
+      <HeroBar servicesSectionRef={servicesSectionRef}/>
       {/*FRONT */}
       {/* Container for the Flippable Content */}
       <Box

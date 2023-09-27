@@ -1,10 +1,12 @@
 import { Box,Typography } from "@mui/material";
 // import TeamMembersSlider from "../../components/team-members";
 import Leadership from "../../components/team-members";
+import React from "react";
 
-const MeetTheTeamSection = () => {
+const MeetTheTeamSection = React.forwardRef((props, ref) => {
   return (
     <Box
+    ref={ref}
     sx={{
         width: "100%",
         
@@ -34,6 +36,6 @@ const MeetTheTeamSection = () => {
       </Box>
     </Box>
   );
-};
+});
 
 export default MeetTheTeamSection;

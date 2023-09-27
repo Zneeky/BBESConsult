@@ -1,6 +1,6 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
 import useServices from "../../hooks/services"; // Update the path accordingly
+import { forwardRef } from "react";
 
 import {
   Box,
@@ -12,12 +12,14 @@ import {
   Button,
 } from "@mui/material";
 
-const ServicesSection: React.FC = () => {
+const ServicesSection= forwardRef<HTMLDivElement>((props, ref) => {
   const services = useServices();
   const { t } = useTranslation();
 
   return (
-    <Box sx={{ m:{xs:"0 1rem",md:"0 3rem",lg:"0 6rem",},flexGrow: 1,display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+    <div ref={ref}>
+    <Box
+    sx={{ m:{xs:"0 1rem",md:"0 3rem",lg:"0 6rem",},flexGrow: 1,display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
       <Typography
         variant="h3"
         sx={{ m:"2rem auto 3rem", fontSize: { xs: "8vw", sm: "5vw", lg: "3vw" } }}
@@ -71,7 +73,8 @@ const ServicesSection: React.FC = () => {
         ))}
       </Grid>
     </Box>
+    </div>
   );
-};
+});
 
 export default ServicesSection;
