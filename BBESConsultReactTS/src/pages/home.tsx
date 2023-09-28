@@ -6,14 +6,14 @@ import ReviewsSection from "../sections/home/reviews-section";
 import ContactSection from "../sections/home/contact-section";
 import Footer from "../components/footer";
 import MeetTheTeamSection from "../sections/home/meet-team";
-import React, { useEffect, useState, useRef } from "react";
+import  { useEffect, useState, useRef } from "react";
 import TopNavBar from "../components/top-navbar";
 
 const HomePage = () => {
   const servicesSectionRef = useRef(null); // Create a ref for ServicesSection
   const [showNavBar, setShowNavBar] = useState(false);
   const meetTheTeamSectionRef = useRef<HTMLDivElement | null>(null); // Explicitly specify the type of the ref object
-  
+  const [isVisible, setIsVisible] = useState(true);
 
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const HomePage = () => {
     <>
       <Box width="100%">
         <HeroSection servicesSectionRef={servicesSectionRef} />
-        {showNavBar && <TopNavBar servicesSectionRef={servicesSectionRef}/>}
+        <TopNavBar servicesSectionRef={servicesSectionRef} isVisible={isVisible && showNavBar} setIsVisible={setIsVisible}/>
         <MeetTheTeamSection ref={meetTheTeamSectionRef}/>
         <Divider sx={{ color: "black" }} />
         <ServicesSection ref={servicesSectionRef} />

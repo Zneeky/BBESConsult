@@ -22,8 +22,10 @@ import useServices from "../hooks/services";
 
 interface TopNavBarProps {
   servicesSectionRef: RefObject<HTMLDivElement>;
+  isVisible: boolean; // New prop
+  setIsVisible: React.Dispatch<React.SetStateAction<boolean>>; // New prop
 }
-const TopNavBar: React.FC<TopNavBarProps> = ({ servicesSectionRef }) => {
+const TopNavBar: React.FC<TopNavBarProps> = ({ servicesSectionRef, isVisible, setIsVisible }) => {
   const [open, setOpen] = useState(false);
   const [openServices, setOpenServices] = useState(false);
   const dropdownServiceRef = useRef<HTMLDivElement | null>(null);
@@ -31,7 +33,6 @@ const TopNavBar: React.FC<TopNavBarProps> = ({ servicesSectionRef }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const [lastScrollTop, setLastScrollTop] = useState(0);
-  const [isVisible, setIsVisible] = useState(true);
   const { i18n, t } = useTranslation(); // Use the useTranslation hook
   const services = useServices();
   const buttonNavColor = "black";
@@ -190,10 +191,10 @@ const TopNavBar: React.FC<TopNavBarProps> = ({ servicesSectionRef }) => {
     const handleScroll = () => {
       let st = document.documentElement.scrollTop;
       if (st < lastScrollTop) {
-        setIsVisible(false);
+        setIsVisible(false); // Use the prop here
         setOpenServices(false);
       } else {
-        setIsVisible(true);
+        setIsVisible(true); // Use the prop here
       }
       setLastScrollTop(st <= 0 ? 0 : st);
     };
@@ -204,7 +205,7 @@ const TopNavBar: React.FC<TopNavBarProps> = ({ servicesSectionRef }) => {
       window.removeEventListener("scroll", handleScroll);
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [lastScrollTop]);
+  }, [lastScrollTop, setIsVisible]);
 
   return (
     <Box
@@ -215,7 +216,7 @@ const TopNavBar: React.FC<TopNavBarProps> = ({ servicesSectionRef }) => {
         WebkitBackdropFilter: "blur(12.7px)",
         alignItems: "center",
         justifyContent: "space-between",
-        padding: "20px 2rem",
+        padding: { xs: "20px 1rem", md: "20px 5rem" },
         height: {
           xs: "55px", // sm breakpoint
           md: "70px", // md breakpoint
